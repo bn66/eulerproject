@@ -8,13 +8,15 @@ def lattice(size):
     """T
     O(???)
     """
+    a = [(0,0)]
+    pos = set(a)
     
-    directions = []
-    coordinates = {(0,0)}
     
-    while len(directions) < 2 * size:
-        if len(list) == 0:
-            list.append(1)  # Go right
-        elif list[-1]:
-            
-            
+    
+    print pos
+	
+
+
+
+
+lattice(1)
