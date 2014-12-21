@@ -23,35 +23,38 @@ def lattice(size):
             # print x, y
             
             if len(i) < size * 2: # less than maximum possible steps
-                # print i
-                
-                if x < size and y > -size: # not far right or bottom
+                if x < size and y > -size: # neither far right nor bottom
                     copy = list(i)
                     
-                    i.append((x+1,y)) # right
+                    i.append((x+1,y)) # move right
                     # print i, "i"
-                    copy.append((x,y-1))  # down
+                    copy.append((x,y-1))  # move down
                     # print copy, "copy"
                     
                     psb.append(copy)
                     # print psb
                     
-                elif x == size:
+                elif x == size: # farthest right
                     # print "reached max x"
                     i.append((x,y-1))
-                elif y == -size:
+                    # for n in range(y, size):
+                        # i.append((x,y-1))
+                    
+                elif y == -size: #farthest bottom
                     # print "reached max y"
                     i.append((x+1,y))
                 else:
                     print "Error"
-            else: # len(i) == size*2:
+                    return None
+            else: 
                 if len(i) == size*2:
                     stop += 1
                     # print stop
                     if stop == len(psb):
                         print "size of psb is", stop
                         return None
-                else:
+                else: 
                     stop = 0
-	
-lattice(20)
+
+                # move completed items to a different list
+lattice(2)
