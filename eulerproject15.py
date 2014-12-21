@@ -34,15 +34,22 @@ def lattice(size):
                     psb.append(copy)
                     # print psb
                     
-                elif x == size: # farthest right
+                elif x == size and y > -size: # farthest right
                     # print "reached max x"
-                    i.append((x,y-1))
-                    # for n in range(y, size):
-                        # i.append((x,y-1))
+                    # i.append((x,y-1))
+                    for n in range(y, size+1):
+                        print n, "n"
+                        i.append((x,y-n))
+                        print i
                     
-                elif y == -size: #farthest bottom
+                elif y == -size and x < size: #farthest bottom
                     # print "reached max y"
                     i.append((x+1,y))
+                    
+                    # for n in range(x, size+1):
+                        # print n, "n"
+                        # i.append((x,y-n))
+                        # print i
                 else:
                     print "Error"
                     return None
