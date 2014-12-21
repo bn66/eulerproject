@@ -8,30 +8,50 @@ def lattice(size):
     """T
     O(???)
     """
-    # ordered dictionary?
     
     # psb = [[(0,0)]]
     psb = [[(0,0),(1,0)],[(0,0),(0,-1)]]
     # if it's 1, print 2
+    stop = 0
+    len(psb)
+    
     while True:
         for i in psb:
-            # print i
-            # print size**2
-            if len(i) < size*2:
-                print "in if"
-                if i[-1][0] < size or i[-1][1] < size:
-                    # print "first", i[-1][0]
-                    # print "second", i[-1][1]
+            # x,y coordinates of last point
+            x = i[-1][0]
+            y = i[-1][1] 
+            # print x, y
+            
+            if len(i) < size * 2: # less than maximum possible steps
+                # print i
+                
+                if x < size and y > -size: # not far right or bottom
+                    copy = list(i)
                     
-                # if # last entry in i is less than the length or width # absolute value
-                # set[0]
-                # elif:
-                    # add 0
-                # i.append(i)
-    print psb
+                    i.append((x+1,y)) # right
+                    # print i, "i"
+                    copy.append((x,y-1))  # down
+                    # print copy, "copy"
+                    
+                    psb.append(copy)
+                    # print psb
+                    
+                elif x == size:
+                    # print "reached max x"
+                    i.append((x,y-1))
+                elif y == -size:
+                    # print "reached max y"
+                    i.append((x+1,y))
+                else:
+                    print "Error"
+            else: # len(i) == size*2:
+                if len(i) == size*2:
+                    stop += 1
+                    # print stop
+                    if stop == len(psb):
+                        print "size of psb is", stop
+                        return None
+                else:
+                    stop = 0
 	
-
-
-
-
-lattice(2)
+lattice(20)
