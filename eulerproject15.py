@@ -17,6 +17,7 @@ def lattice(size):
     
     while True:
         for i in psb:
+                
             # x,y coordinates of last point
             x = i[-1][0]
             y = i[-1][1]
@@ -52,12 +53,16 @@ def lattice(size):
             else: 
                 if len(i) == size*2:
                     stop += 1
-                    # print stop
-                    if stop == len(psb):
+                    psb.remove(i)
+                    if len(psb) == 0:
                         print "size of psb is", stop
                         return None
-                else: 
-                    stop = 0
+                    # print stop
+                    # if stop == len(psb):
+                        # print "size of psb is", stop
+                        # return None
+                # else: 
+                    # stop = 0
                 
                 # move completed items to a different list
-lattice(4)
+lattice(20)
