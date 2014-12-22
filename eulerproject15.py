@@ -9,8 +9,8 @@ def lattice(size):
     O(???)
     """
     # up and right
-    # psb = [[(0,0)]]
-    psb = [[(1,0)],[(0,1)]]
+    psb = [[(1,0)]]
+    # psb = [[(1,0)],[(0,1)]]
     # if it's 1, print 2
     stop = 0
     len(psb)
@@ -40,7 +40,7 @@ def lattice(size):
                         i.append((x,y+(n+1)))
                     # print i
                     
-                elif y == size and x < size: #farthest bottom
+                elif y == size and x < size: # farthest top, go straight to the right
                     for n in range(0, size-x):
                         # time.sleep(1)
                         i.append((x+(n+1),y))
@@ -55,7 +55,7 @@ def lattice(size):
                     stop += 1
                     psb.remove(i)
                     if len(psb) == 0:
-                        print "size of psb is", stop
+                        print "size of psb is", 2 * stop
                         return None
                     # print stop
                     # if stop == len(psb):
@@ -65,4 +65,5 @@ def lattice(size):
                     # stop = 0
                 
                 # move completed items to a different list
+                # cut everything in two by only going right initially
 lattice(20)
