@@ -4,7 +4,7 @@ Lattice paths
 http://projecteuler.net/problem=15
 """
 import time
-def lattice(size):
+def lattice(sizex,sizey):
     """T
     O(???)
     """
@@ -23,8 +23,8 @@ def lattice(size):
             y = i[-1][1]
             # print x, y
             
-            if len(i) < size * 2: # less than maximum number of steps
-                if x < size and y < size: # neither far right nor top
+            if len(i) < sizex + sizey: # less than maximum number of steps
+                if x < sizex and y < sizey: # neither far right nor top
                     copy = list(i)
                     
                     i.append((x+1,y)) # move right
@@ -34,14 +34,14 @@ def lattice(size):
                     psb.append(copy)
                     # print psb
                     
-                elif x == size and y < size: # farthest right, go straight up
-                    for n in range(0, size-y):
+                elif x == sizex and y < sizey: # farthest right, go straight up
+                    for n in range(0, sizey-y):
                         # time.sleep(1)
                         i.append((x,y+(n+1)))
                     # print i
                     
-                elif y == size and x < size: # farthest top, go straight to the right
-                    for n in range(0, size-x):
+                elif y == sizey and x < sizex: # farthest top, go straight to the right
+                    for n in range(0, sizex-x):
                         # time.sleep(1)
                         i.append((x+(n+1),y))
                     # print i
@@ -51,7 +51,7 @@ def lattice(size):
                     return None
             
             else: 
-                if len(i) == size*2:
+                 if len(i) == sizex + sizey:
                     stop += 1
                     psb.remove(i)
                     if len(psb) == 0:
@@ -66,4 +66,5 @@ def lattice(size):
                 
                 # move completed items to a different list
                 # cut everything in two by only going right initially
-lattice(20)
+                # RECURSIVE?
+lattice(2,3)
