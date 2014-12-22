@@ -23,39 +23,32 @@ def lattice(size):
             # print x, y
             
             if len(i) < size * 2: # less than maximum number of steps
-                if x < size and y > -size: # neither far right nor bottom
+                if x < size and y < size: # neither far right nor top
                     copy = list(i)
                     
                     i.append((x+1,y)) # move right
                     # print i, "i"
-                    copy.append((x,y-1))  # move down
+                    copy.append((x,y+1))  # move up
                     # print copy, "copy"
                     psb.append(copy)
                     # print psb
                     
+                elif x == size and y < size: # farthest right, go straight up
+                    for n in range(0, size-y):
+                        # time.sleep(1)
+                        i.append((x,y+(n+1)))
+                    # print i
                     
-                elif x == size and y > -size: # farthest right
-                    # print "reached max x"
-                    # i.append((x,y-1))
-                    print -y+1, "-y+1"
-                    for n in range(-y+1, size):
-                        time.sleep(1)
-                        print -n, "-n is "
-                        print y-n, "difference"
-                        i.append((x,y-n))
-                        print i
+                elif y == size and x < size: #farthest bottom
+                    for n in range(0, size-x):
+                        # time.sleep(1)
+                        i.append((x+(n+1),y))
+                    # print i
                     
-                elif y == -size and x < size: #farthest bottom
-                    # print "reached max y"
-                    i.append((x+1,y))
-                    
-                    # for n in range(x, size+1):
-                        # print n, "n"
-                        # i.append((x,y-n))
-                        # print i
                 else:
                     print "Error"
                     return None
+            
             else: 
                 if len(i) == size*2:
                     stop += 1
@@ -65,6 +58,6 @@ def lattice(size):
                         return None
                 else: 
                     stop = 0
-
+                
                 # move completed items to a different list
-lattice(2)
+lattice(4)
