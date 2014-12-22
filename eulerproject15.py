@@ -9,8 +9,8 @@ def lattice(sizex,sizey):
     O(???)
     """
     # up and right
-    psb = [[(1,0)]]
-    # psb = [[(1,0)],[(0,1)]]
+    # psb = [[(1,0)]]
+    psb = [[(1,0)],[(0,1)]]
     # if it's 1, print 2
     stop = 0
     len(psb)
@@ -55,7 +55,7 @@ def lattice(sizex,sizey):
                     stop += 1
                     psb.remove(i)
                     if len(psb) == 0:
-                        print "size of psb is", 2 * stop
+                        print "size of psb is", stop
                         return None
                     # print stop
                     # if stop == len(psb):
