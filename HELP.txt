@@ -1,12 +1,10 @@
 Functions:
 
 eulerproject2.py [last updated:]
-
-def FibFind(one, two, nth):
+    def FibFind(one, two, nth):
 --------
         
 eulerproject3.py [last updated:]
-        
     PrimeFactorization(number):
         """All numbers can be represenated by the product of primes.
         The answer to this problem will be the last entry of the output.
@@ -45,52 +43,25 @@ eulerproject4.py [last updated:]
         """
 
 eulerproject5.py [last updated:]
-
     def PrimeTest(number):
         """This function takes the Brute Force method for testing primes.
         It will return True or False.
         O(n)
         """
-        # Initialize bounds. Factors meet at the square root of a number.
-        limit = number ** 0.5
-        i = 2
-        if number == 1: # Exception
-            print "One is special"
-            return False
-        while i <= limit: # Division tests
-            if number % i == 0:
-                return False
-            elif number % i != 0:
-                i += 1
-        if i > limit:
-            return True
 
     def MultipleCalc(number):
         """This function calculates the lowest common multiple of numbers
         from 1 to 'number.'
         O(n^2)
         """
-        answer = 1
-        for i in range(1, number + 1):
-            if answer % i == 0: # Already divisble
-                continue
-            elif PrimeTest(i): # Prime case
-                answer *= i
-            elif answer % i != 0: # All other cases
-                answer *= i / (answer % i)
-        print """The lowest number that is divisible by all numbers
-        from 1 to %d is %d
-        """ % (number, answer)
 
 eulerproject6.py [last updated:]
-
     def SumSquareDif(number):
         """Brute Force calculation of the difference of the sum of the
         squares of natural numbers and the square of the sum of natural
         numbers.
         O(n)
         """
-        
         
     def SumSquareDifSF(n):
         """Uses Summation Formulas for the calculation of the difference
@@ -100,7 +71,6 @@ eulerproject6.py [last updated:]
         """
     
 eulerproject7.py [last updated:]
-
     def find_prime(nth):
         """This function builds a list of primes until the 'nth' prime is
         found. It uses eulerproject5.PrimeTest to test for primality. It
@@ -144,7 +114,6 @@ eulerproject9.py [last updated:]
         
         
 eulerproject10.py [last updated:]
-
     def compile_primes(nth):
         """This function builds a list of primes under 'nth'.
         It uses eulerproject5.PrimeTest to test for primality. It
@@ -177,7 +146,6 @@ eulerproject11.py [last updated:]
         """
         
 eulerproject12.py [last updated:]
-
     def triangular_divisors(divisors):
         """The 'nth' triangular number is made by the summation of all
         natural numbers from 1 to 'nth'. This function will find the 'nth'
@@ -196,7 +164,6 @@ eulerproject12.py [last updated:]
         """
 
 eulerproject13.py [last updated:]
-
     def large_sum(file, number):
         """This function takes the file, puts all numbers in a list, and
         then sums them. It will return the first 'number' digits of the sum
@@ -204,7 +171,6 @@ eulerproject13.py [last updated:]
         """
     
 eulerproject14.py [last updated:]
-    
     def collatz(number):
         """This will take a number and apply the Collatz Conjecture.
         It returns the sequence of steps taken to reduce 'number' to 1.
@@ -218,4 +184,30 @@ eulerproject14.py [last updated:]
         O(n^2)
         """
 
+eulerproject15.py [last updated:]
+    def lattice_bf(sizex, sizey = None):
+        """Brute force method for finding all paths in a rectangular
+        lattice. Arguments must be integers greater than zero. This method
+        becomes exponentially slower. Note that this method travels right
+        and upwards, as opposed to downwards and to the right.
+        O(n^2)
+        """
+
+    def lattice_add(sizex, sizey = None):
+        """Method for finding all paths in a rectangular lattice based on 
+        discovered numerical patterns. This is significantly faster than the
+        brute force method although having the same time complexity.
+        O(n^2)
+        """
+
+    def lattice_cmb(size):
+        """Equation for finding all paths in a rectangular lattice using
+        combinatorics.
+        O(1)
+        """
+
+eulerproject15.py [last updated:]
+eulerproject15.py [last updated:]
+eulerproject15.py [last updated:]
+eulerproject15.py [last updated:]
 eulerproject15.py [last updated:]
