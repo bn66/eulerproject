@@ -1,0 +1,221 @@
+Functions:
+
+eulerproject2.py [last updated:]
+
+def FibFind(one, two, nth):
+--------
+        
+eulerproject3.py [last updated:]
+        
+    PrimeFactorization(number):
+        """All numbers can be represenated by the product of primes.
+        The answer to this problem will be the last entry of the output.
+        The first divisible number will always be prime.
+        O(n)
+        """
+        
+    def product(list):
+        """Returns the product of every item in a list
+        O(n)
+        """
+
+    def product_reduce(list):
+        """Returns the product of every item in a list. Uses reduce.
+        O(n)
+        """
+    
+eulerproject4.py [last updated:]
+    def PalindromeTest(number):
+        """This function will test if a number is a Palindrome.
+        From the outside in, it compares the numbers.
+        It returns a of True or False
+        """
+        
+    def Palindrome(digits):
+        """This Function prints out the highest Palindrome and its 
+        respective factors. It searches for all permutations of a
+        specified amount of digits
+        """
+
+    def PalindromeTD(digits):
+        """This Function prints out the highest Palindrome and its 
+        respective factors. It attempts to minimize search time through a
+        Top-Down approach; it will calculate with larger numbers first.
+        O(n^1)
+        """
+
+eulerproject5.py [last updated:]
+
+    def PrimeTest(number):
+        """This function takes the Brute Force method for testing primes.
+        It will return True or False.
+        O(n)
+        """
+        # Initialize bounds. Factors meet at the square root of a number.
+        limit = number ** 0.5
+        i = 2
+        if number == 1: # Exception
+            print "One is special"
+            return False
+        while i <= limit: # Division tests
+            if number % i == 0:
+                return False
+            elif number % i != 0:
+                i += 1
+        if i > limit:
+            return True
+
+    def MultipleCalc(number):
+        """This function calculates the lowest common multiple of numbers
+        from 1 to 'number.'
+        O(n^2)
+        """
+        answer = 1
+        for i in range(1, number + 1):
+            if answer % i == 0: # Already divisble
+                continue
+            elif PrimeTest(i): # Prime case
+                answer *= i
+            elif answer % i != 0: # All other cases
+                answer *= i / (answer % i)
+        print """The lowest number that is divisible by all numbers
+        from 1 to %d is %d
+        """ % (number, answer)
+
+eulerproject6.py [last updated:]
+
+    def SumSquareDif(number):
+        """Brute Force calculation of the difference of the sum of the
+        squares of natural numbers and the square of the sum of natural
+        numbers.
+        O(n)
+        """
+        
+        
+    def SumSquareDifSF(n):
+        """Uses Summation Formulas for the calculation of the difference
+        of the sum of the squares of natural numbers and the square of
+        the sum of natural numbers.
+        O(1)
+        """
+    
+eulerproject7.py [last updated:]
+
+    def find_prime(nth):
+        """This function builds a list of primes until the 'nth' prime is
+        found. It uses eulerproject5.PrimeTest to test for primality. It
+        works off the fact that, except 2 and 3, only numbers 6 +/- 1 need
+        to be checked for primality. This was an effort to (simply) reduce
+        calcuations.
+        O(n^1.5)
+        """
+
+    def find_prime_se(nth):
+        """This function uses the Sieve of Eratosthenes to create a list
+        of primes. In the end, the nth prime is printed with 'True'.
+        At http://en.wikipedia.org/wiki/Prime_number_theorem , the amount of 
+        primes under an 'x' amount of numbers are available. The line was 
+        fit to a log-log plot and offset to over-estimate the upper bound.
+        O(n^1.5)
+        """
+
+eulerproject8.py [last updated:]
+    def largest_product_series(series, consecutive):
+        """This function will take in a txt file 'series' with numbers
+        and look for the a chain of numbers 'consecutive' long with the
+        largest product.
+        O(n)
+        
+        
+eulerproject9.py [last updated:]
+    def pythagorean_triplet_product(abc_sum):
+        """This function takes a number 'abc_sum' as an argument. It finds 
+        set(s) of pythagorean triplets that add up to 'abc_sum'. It will
+        also print the product of the three triplets.
+        'a' is essentially a lower bound. 'b' is between.
+        'c' is essentially an upper bound.
+        O(n^2)
+        """
+        
+    def whole_test(number):
+        """Tests if a number is a whole number. Returns True or False
+        O(1)
+        """
+        
+        
+eulerproject10.py [last updated:]
+
+    def compile_primes(nth):
+        """This function builds a list of primes under 'nth'.
+        It uses eulerproject5.PrimeTest to test for primality. It
+        works off the fact that, except 2 and 3, only numbers 6 +/- 1 need
+        to be checked for primality. This was an effort to (simply) reduce
+        calcuations.
+        This function borrows heavily from the structure in eulerproject7.
+        O(n^1.5)
+        """
+ 
+    def compile_primes_se(nth):
+        """This function uses the Sieve of Eratosthenes to create a list
+        of primes under 'nth'.
+        This function borrows heavily from the structure in eulerproject7.
+        O(n^1.5)
+        """
+ 
+eulerproject11.py [last updated:]
+    def largest_product_grid(file, consecutive):
+        """This function will take in the 'file' txt file with numbers
+        and look for the a series adjacent numbers in a line 'consecutive'
+        long with the largest product. The numbers must be rectangular
+        Because multiplication is commutative, only four sets of directions
+        will have unique results: 
+        | - \ /, vertical, horizontal, backslash and forward slash.
+        The horizontal search pattern borrows heavily from eulerproject8
+        All search algorithms use i for rows and j for columns, searching
+        from the left to the right and top to bottom. 'k' compiles a list
+        O(n^3)
+        """
+        
+eulerproject12.py [last updated:]
+
+    def triangular_divisors(divisors):
+        """The 'nth' triangular number is made by the summation of all
+        natural numbers from 1 to 'nth'. This function will find the 'nth'
+        triangular number with at least 'divisors' number of divisors.
+        Triangular numbers can be calculated using summation formulas.
+        O(n^1.5)
+        """
+        
+
+        
+    def factorize_half(number):
+        """This function compiles the first half of factors for a given
+        'number'. When it has reached the limit, it will return the half
+        list of factors
+        O(n^0.5)
+        """
+
+eulerproject13.py [last updated:]
+
+    def large_sum(file, number):
+        """This function takes the file, puts all numbers in a list, and
+        then sums them. It will return the first 'number' digits of the sum
+        O(n)
+        """
+    
+eulerproject14.py [last updated:]
+    
+    def collatz(number):
+        """This will take a number and apply the Collatz Conjecture.
+        It returns the sequence of steps taken to reduce 'number' to 1.
+        O(n)
+        """
+
+            
+    def longest_collatz(limit):
+        """Computes the longest Collatz Conjecture sequence from all numbers
+        until 'limit'.
+        O(n^2)
+        """
+
+eulerproject15.py [last updated:]
