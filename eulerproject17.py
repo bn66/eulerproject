@@ -1,14 +1,18 @@
 """
 Euler Project Problem #17
-Power digit sum
+Number letter counts
 http://projecteuler.net/problem=17
 """
 
-def power_sum(a, n):
+def number_word(a, n):
     """Lit
     """
+    
+    # dictinary  two of them one for words one for letters
+    
     list = map(int, str(a ** n))
     ans = sum(list)
+    
     print ans
 
 # tests

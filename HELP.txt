@@ -206,7 +206,12 @@ eulerproject15.py [last updated:]
         O(1)
         """
 
-eulerproject15.py [last updated:]
+eulerproject16.py [last updated:]
+    def power_sum(a, n):
+        """Literal and straightforward solution for Problem #16. Prints
+        sum of the digits of number 'a' to the 'n'th exponent. 
+        O(n)
+        """
 eulerproject15.py [last updated:]
 eulerproject15.py [last updated:]
 eulerproject15.py [last updated:]
