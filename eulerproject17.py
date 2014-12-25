@@ -4,6 +4,7 @@ Number letter counts
 http://projecteuler.net/problem=17
 """
 import math
+
 def number_word(n):
     """Recursively calculates the number of letters in spelling out a 
     number, n, returns the value. Spaces and hyphens are not counted, 
@@ -46,10 +47,9 @@ def number_word(n):
     if n == 0:
         a = 0
     else:
-        # a = len(str(n))
-        a = math.floor(math.log10(n))+1 # faster
+        a = math.floor(math.log10(n)) + 1
         
-    # Number processing
+    # Recursive Processing
     if a > 3 and a < 7: # Thousands
         value += nums[n // 1000] + 8 # t-h-o-u-s-a-n-d
         value += number_word(n % 1000)
@@ -101,22 +101,23 @@ def number_word(n):
         return value
     elif a == 0:
         return 0
-    return value
 
-def num_let_count(a, b):
-    """
-    
+def number_word_loop(a, b):
+    """Calls on number_word function to find the sum of letters in
+    numbers written out from a to b.
+    O(n)
     """
     sum = 0
     
     for i in range(a, b+1):
         sum += number_word(i)
     
-    print """answer is:
-        """, sum
+    print """The total number of letters of all numbers from %d to %d
+        written in words is %d
+        """ % (a, b, sum)
         
 # tests
-# num_let_count(1, 1000)
+number_word_loop(1, 1000)
 # def number_word(100)
 """
 Notes:
