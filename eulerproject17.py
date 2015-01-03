@@ -11,12 +11,12 @@ def number_word(n):
     and 'and' is used. For example, 342 (three hundred and forty-two) 
     returns 23 and 115 (one hundred and fifteen) returns 20.The use of 
     "and" when writing out numbers is in compliance with British usage.
+    Works up to 999,999.
     O(1)
     """
-    # dictionary  two of them one for words one for letters
     value = 0
     
-    # numbers directly to values
+    # Numbers directly to values
     nums = {
         # Core numbers
         1: 3, # one
@@ -51,7 +51,7 @@ def number_word(n):
         
     # Recursive Processing
     if a > 3 and a < 7: # Thousands
-        value += nums[n // 1000] + 8 # t-h-o-u-s-a-n-d
+        value += number_word(n // 1000) + 8 # t-h-o-u-s-a-n-d
         value += number_word(n % 1000)
         return value
     elif a == 3: # Hundreds

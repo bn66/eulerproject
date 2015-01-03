@@ -219,6 +219,7 @@ eulerproject17.py [last updated:]
         and 'and' is used. For example, 342 (three hundred and forty-two) 
         returns 23 and 115 (one hundred and fifteen) returns 20.The use of 
         "and" when writing out numbers is in compliance with British usage.
+        Works up to 999,999.
         O(1)
         """
 
@@ -230,5 +231,5 @@ eulerproject17.py [last updated:]
         
 eulerproject18.py [last updated:]
     
-eulerproject15.py [last updated:]
-eulerproject15.py [last updated:]
+eulerproject18.py [last updated:]
+eulerproject18.py [last updated:]
