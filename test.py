@@ -1,7 +1,6 @@
-psb = [[(0,0),(1,0)],[(0,0),(0,-1)]]
+from csvBill import *
 
-for i in psb:
-    print i
-    print len(i)
+a = [[1,2,3],[4,5,6],[7,8,9]]
 
+csvWrite(a)
 
