@@ -29,55 +29,27 @@ def max_path(file):
     print numbers
     
     highest_sum = 0
-    list = []
+    # best path
     
-    window = 1
-    
-    # while col_list[0] != 1
-        # for i in row_list:
-            # list.append(numbers[i][col_list[i]])
-            # insert sum here
-    """
-        for i in list
-            if list[-window:][0] == list[-window:][1]
-        
+    while col_list != row_list:
         list = []
-        window += 1
-    """
-    # let's try something new
-    # row_index = 1
-    # while row_list != col_list:
-        # for i in row_list:
-            # list.append(numbers[i][col_list[i]])
-            # # sum row, logic check
-        # # function to increase column list
-        # for i in range(1, len(col_list)):
-            # if col_list(i) == col_list(i + 1):
-                
-            
-        # col_list = [0, 1, 2, 3]
-            
+        for i in range(0, len(row_list)):
+            list.append(numbers[row_list[i]][col_list[i]])
+        sum = reduce(lambda x, y: x+y, list)
+        # print sum
+        if highest_sum < sum:
+            highest_sum = sum
+        for i in range(1, len(col_list)):
+            # print col_list[-i]
+            if col_list[-i] == col_list[-i-1]:
+                col_list[-i] += 1
+                col_list[-i:] = [col_list[-i]] * (i)
+                break
+            elif col_list[-i] + 1 == col_list[-i-1]:
+                continue
+        # print col_list
     
-        
-    
-    
-    print list
-    
-
-def ep18_recur(a, b):
-    """fffffff
-    Recursively builds something
-    O(???)
-    """
-    
-    if a[-1] + 1 == b[0]:
-        return path
-    if a[-1] == b[0]: # dive deeper
-        ep18_recur([b[0],b[1:])
-        
-        
-    
-    
+    print highest_sum
 # tests
+max_path('eulerproject18.txt')
 # max_path('test.txt')
-ep18_recur([1],[1,1,1,1])
