@@ -4,19 +4,20 @@ Maximum Path Sum I
 http://projecteuler.net/problem=18
 """
 
-def max_path(file):
-    """fffffff
-    Borrows from eulerproject11 code
-    O(???)
+def max_path_sum(file):
+    """Brute force solution to search for a path from top to bottom in a
+    number triangle defined in a txt file. Prints the path of the
+    highest sum with its value.
+    O(n)
     """
-    # Read file, create iterable 2D list, initialize variables
+    # Read file, create iterable 2D list "numbers"
     numbers = open(file).read()
     numbers = numbers.splitlines()
     numbers = [i.split() for i in numbers]
     
+    # Take 'int' of numbers
+    # Create a list of rows and changing column indexes
     rows = len(numbers)
-    # columns = len(numbers[1]) # *************
-    
     row_list = []
     col_list = []
     for i in range(0, rows):
@@ -24,32 +25,34 @@ def max_path(file):
         row_list.append(i)
         col_list.append(0)
         
-    print row_list, "row"
-    print col_list, "col"
-    print numbers
+    # print numbers, "Triangle"
     
+    # Answers
     highest_sum = 0
-    # best path
+    highest_path = []
     
-    while col_list != row_list:
-        list = []
-        for i in range(0, len(row_list)):
+    # Brute force search from top to bottom, left to right
+    while col_list != row_list: # Right side of triangle is last
+        list = [] 
+        for i in range(0, len(row_list)): # Construct list of numbers
             list.append(numbers[row_list[i]][col_list[i]])
         sum = reduce(lambda x, y: x+y, list)
-        # print sum
+        
         if highest_sum < sum:
             highest_sum = sum
+            best_path = list
+            
+        # Construct list by changing bottom values and working upwards
         for i in range(1, len(col_list)):
-            # print col_list[-i]
             if col_list[-i] == col_list[-i-1]:
                 col_list[-i] += 1
                 col_list[-i:] = [col_list[-i]] * (i)
                 break
             elif col_list[-i] + 1 == col_list[-i-1]:
                 continue
-        # print col_list
     
     print highest_sum
+    print highest_path
+
 # tests
-max_path('eulerproject18.txt')
-# max_path('test.txt')
+# max_path_sum('eulerproject18.txt')
