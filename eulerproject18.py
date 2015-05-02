@@ -54,5 +54,6 @@ def max_path_sum(file):
     print highest_sum
     print highest_path
 
+
 # tests
 # max_path_sum('eulerproject18.txt')
