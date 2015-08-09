@@ -5,7 +5,7 @@ http://projecteuler.net/problem=19
 """
 
 def sunday_count(year):
-    """Counts first sundays based on first day of year
+    """Given a year, counts the number of first sundays.
     O(???)
     """
     # first_day = year
@@ -22,7 +22,7 @@ def sunday_count(year):
         months[1] = ('Feb',29)
         # print "leap year"
     
-    # first day
+    # first day of the year
     # Moves by 1 day for or 2 for leep years
     day = 1 # Monday in 1900
     day += (year - 1900)
@@ -45,8 +45,6 @@ def sunday_count(year):
 a = 0
 for i in range(1901, 2001):
     a += sunday_count(i)
-    # a += sunday_count(first_day(i))
-    # print i, first_day(i)
     
 print a
     
